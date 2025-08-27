@@ -13,6 +13,8 @@ export const Footer = () => {
                 </div>
 
                 <div>
+                    {/* todo need to link to actual web pages */}
+                    
                     <div className='flex justify-center space-x-4 mb-8'>
                         <Link href="/" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
                         <FaGithub/>

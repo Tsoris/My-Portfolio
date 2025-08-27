@@ -8,8 +8,8 @@ function Hero() {
     <section className='py-28 containar max-w-7xl mx-auto px-4'>
         <div className='max-w-3xl mx-auto text-center'>
             <div className='flex flex-col items-center mb-4'>
-            <Image src="/profile.jfif" alt='profile image' width={100} height={100} className='
-            rounded-full mb-4 w-32 h-32 objectt-cover ring-2 ring primary'/>
+            <Image src="/profile.png" alt='profile image' width={100} height={100} className='
+            rounded-full mb-4 w-32 h-32 object-cover object-[center_20%] p-1 ring-2 ring-primary'/>
             </div>
 
             <h1 className='text-4xl md:text-6xl front-bold mb-6'>Hi, I'm <span className='text-primary'>Timothy Sorisa
@@ -19,6 +19,8 @@ function Hero() {
                 Full Stack Developer
             </p>
 
+            {/* todo need to link to actual web pages */}
+            
             <div className='flex justify-center space-x-4 mb-8'>
                 <Link href="/" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
                     <FaGithub/>
