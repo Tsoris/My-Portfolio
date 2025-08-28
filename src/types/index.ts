@@ -14,3 +14,14 @@ export interface Blog {
     readTime: string;
     slug: string;
 }
+
+export interface Timeline {
+    title: string;
+    org: string;
+    href?: string;
+    location?: string;
+    start: string;
+    end: string;
+    bullets: string[];
+    icon?: React.ReactNode;
+}

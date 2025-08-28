@@ -1,10 +1,10 @@
 "use client"
 
+import { useTheme } from '@/app/context/ThemeContext'
 import { Bars3Icon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
-import { useTheme } from '../context/ThemeContext'
 
 const NavBar = () => {
     const {theme, toggleTheme} = useTheme();

@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import Blogs from "./components/Blogs";
-import NewsLetter from "./components/NewsLetter";
-import { Footer } from "./components/Footer";
+import Hero from "./components/homepage/Hero";
+import Projects from "./components/homepage/Projects";
+import Blogs from "./components/homepage/Blogs";
+import NewsLetter from "./components/homepage/NewsLetter";
+import { Footer } from "./components/homepage/Footer";
 
 export default function Home() {
   return (
