@@ -41,6 +41,18 @@ a {
   .section-title {
     @apply text-3xl font-bold mb-8 text-center;
   }
+
+  .tooltip {
+    @apply pointer-events-none absolute bottom-full mb-2 left-1/2 -translate-x-1/2
+    px-2 py-0.5 text-xs text-white bg-gray-700/90 rounded-full shadow
+    opacity-0 scale-95 translate-y-1 whitespace-nowrap
+    motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out;
+  }
+  
+  .tooltip-show {
+    @apply group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0
+    group-focus-visible:opacity-100 group-focus-visible:scale-100 group-focus-visible:translate-y-0;
+  }
 } 
 
 @keyframes fadeIn {

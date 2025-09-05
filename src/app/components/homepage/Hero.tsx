@@ -1,7 +1,7 @@
 import Image from'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaFileAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 function Hero() {
   return (
@@ -22,14 +22,36 @@ function Hero() {
             {/* todo need to link to actual web pages */}
             
             <div className='flex justify-center space-x-4 mb-8'>
-                <Link href="/" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
+                <Link 
+                href="https://github.com/Tsoris" 
+                target='_blank'
+                rel="noopener noreferrer"
+                className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
                     <FaGithub/>
                 </Link>
-                <Link href="/" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
+                <Link 
+                href="https://www.linkedin.com/in/timothy-sorisa-9b650580/" 
+                target='_blank'
+                rel="noopener noreferrer"
+                className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
                     <FaLinkedin/>
                 </Link>
-                <Link href="/" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
+                <Link 
+                href="https://x.com/TimSorDevelop" 
+                target='_blank'
+                rel="noopener noreferrer"
+                className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
                     <FaTwitter/>
+                </Link>
+                <Link 
+                href="../projects/Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300">
+                    <FaFileAlt />
+                    <span className="tooltip tooltip-show">
+                    View Resume
+                    </span>
                 </Link>
             </div>
 
@@ -38,7 +60,7 @@ function Hero() {
                 Veiw Projects
                 </Link>
 
-                <Link href="/projects" className='bg-gray-500 inline-block w-full md:w-auto text-white px-8 py-3 rounded-lg hover:text-gray-800 hover:bg-gray-300 transition-colors'>
+                <Link href="/contact" className='bg-gray-500 inline-block w-full md:w-auto text-white px-8 py-3 rounded-lg hover:text-gray-800 hover:bg-gray-300 transition-colors'>
                 Contact Me
                 </Link>
             </div>

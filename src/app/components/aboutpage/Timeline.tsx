@@ -1,12 +1,25 @@
 import { timeline } from "@/contents/timeline";
+import Link from "next/link";
+import { FaFileAlt } from "react-icons/fa";
 
 const Timeline = () => {
   return (
     <section className="mb-16">
-      <h2 className="section-title">
-        Experience & Education Timeline
-      </h2>
-
+      <div className="section-title flex items-center justify-center space-x-3">
+        <h2>
+          Education & Experience
+        </h2>
+        <Link
+        href="../projects/Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative group text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300">
+          <FaFileAlt />
+          <span className="tooltip tooltip-show">
+          View Resume
+          </span>
+        </Link>
+      </div>
       {/* Vertical line */}
       <div className="relative">
         <div

@@ -2,6 +2,7 @@ import React from 'react'
 import { FaCode } from 'react-icons/fa'
 import Timeline from '../components/aboutpage/Timeline'
 import Link from 'next/link'
+import { FaClipboard } from 'react-icons/fa6'
 
 function About() {
   return (
@@ -52,15 +53,6 @@ function About() {
         </div>
       </section>
       <Timeline/>
-      <div className='flex justify-center mt-8'>
-        <Link 
-        href="../projects/Resume.pdf"
-        target='_blank'
-        rel="noopener noreferrer"
-        className='bg-primary inline-block w-full md:w-auto text-white px-8 py-2 rounded-lg hover:text-gray-800 hover:bg-gray-300 transition-colors'>
-          View Resume
-        </Link>
-      </div>
     </div>
     
   )
