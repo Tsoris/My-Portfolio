@@ -27,9 +27,9 @@ const ContactPage = () => {
             const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
-                    "Context-Type": "application/json"
+                    "Content-Type": "application/json"
                 },
-                body: JSON.stringify(formData.message)
+                body: JSON.stringify(formData)
             })
 
             if(!response.ok) {
