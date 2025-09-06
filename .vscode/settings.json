@@ -1,0 +1,14 @@
+{
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+
+  // Use Prettier as the default formatter
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Run Prettier automatically on save
+  "editor.formatOnSave": true,
+
+  // Also run ESLint fixes (like no-unused-vars removals) on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+}

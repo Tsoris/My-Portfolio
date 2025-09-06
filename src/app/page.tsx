@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "./components/homepage/Hero";
 import Projects from "./components/homepage/Projects";
 import Blogs from "./components/homepage/Blogs";
@@ -8,11 +7,11 @@ import { Footer } from "./components/homepage/Footer";
 export default function Home() {
   return (
     <>
-      <Hero/>
-      <Projects/>
-      <Blogs/>
-      <NewsLetter/>
-      <Footer/>
+      <Hero />
+      <Projects />
+      <Blogs />
+      <NewsLetter />
+      <Footer />
     </>
   );
 }
