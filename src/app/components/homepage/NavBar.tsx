@@ -10,6 +10,8 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { slideInLeft, slideInRight } from '@/utils/animations';
 
 const NavBar = () => {
   const { theme, toggleTheme } = useTheme();
@@ -42,27 +44,37 @@ const NavBar = () => {
 
   return (
     <nav className='fixed w-full bg-white/80 dark:bg-dark/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-700 shadow-sm'>
-      <div className='container max-w-7xl mx-auto px-4'>
+      <motion.div
+        initial='initial'
+        animate='animate'
+        variants={{
+          initial: {},
+          animate: { transition: { staggerChildren: 0.3 } },
+        }}
+        className='container max-w-7xl mx-auto px-4'
+      >
         {/* desktop menu */}
         <div className='flex items-center justify-between h-16'>
-          <Link href='/' className='text-xl font-bold text-primary'>
-            Devfolio&trade;
-          </Link>
-
+          <motion.div variants={slideInLeft}>
+            <Link href='/' className='text-xl font-bold text-primary'>
+              Devfolio&trade;
+            </Link>
+          </motion.div>
           {/* desktop menus */}
           <div className='hidden md:flex items-center space-x-8'>
             {menuItems.map((item) => {
               const isActive = pathname === item.href;
               return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`hover:text-primary transition-colors font-medium ${
-                    isActive ? 'text-primary' : ''
-                  }`}
-                >
-                  {item.label}
-                </Link>
+                <motion.div key={item.href} variants={slideInRight}>
+                  <Link
+                    href={item.href}
+                    className={`hover:text-primary transition-colors font-medium ${
+                      isActive ? 'text-primary' : ''
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
               );
             })}
             <button
@@ -129,7 +141,7 @@ const NavBar = () => {
             </div>
           </div>
         )}
-      </div>
+      </motion.div>
     </nav>
   );
 };
