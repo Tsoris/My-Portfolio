@@ -2,7 +2,6 @@
 import { projects } from '@/contents/projects';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { cardHoverArticle, cardReveal, listStagger } from '@/utils/animations';
@@ -20,14 +19,16 @@ function Projects() {
         variants={listStagger}
         initial='hidden'
         whileInView='visible'
-        viewport={{ once: true, amount: 0.2 }} // animate once when ~20% in view
+        viewport={{ once: true, amount: 0.05 }}
         className='grid grid-cols-1 md:grid-cols-3 gap-8'
       >
-        {projects.map((project) => (
+        {projects.map((project, i) => (
           <MotionArticle
+            key={project.id}
             variants={cardReveal}
-            {...cardHoverArticle}
-            key={project.title}
+            whileHover={cardHoverArticle.whileHover}
+            whileTap={cardHoverArticle.whileTap}
+            transition={cardHoverArticle.transition}
             className='bg-white dark:bg-dark/50 rounded-lg shadow-md p-6'
           >
             <div className='relative aspect-video mb-4 rounded-lg overflow-hidden'>
@@ -46,9 +47,9 @@ function Projects() {
             </p>
 
             <div className='flex flex-wrap gap-2 mb-4'>
-              {project.technologies.map((tech) => (
+              {project.technologies.map((tech, idx) => (
                 <span
-                  key={tech}
+                  key={`${project.id}-${tech}-${idx}`}
                   className='px-3 py-1 bg-primary/10 text-primary rounded-full text-sm'
                 >
                   {tech}
@@ -60,14 +61,16 @@ function Projects() {
               <Link
                 href={project.githubLink}
                 target='_blank'
+                rel='noopener noreferrer'
                 className='flex items-center gap-2 text-secondary hover:text-primary transition-colors'
               >
                 <FaGithub className='w-5 h-5' /> <span>Code</span>
               </Link>
 
               <Link
-                href={project.githubLink}
+                href={project.demoLink}
                 target='_blank'
+                rel='noopener noreferrer'
                 className='flex items-center gap-2 text-secondary hover:text-primary transition-colors'
               >
                 <FaExternalLinkAlt className='w-5 h-5' /> <span>Live Demo</span>

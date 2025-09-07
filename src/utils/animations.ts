@@ -43,10 +43,11 @@ export const listStagger: Variants = {
 };
 
 // 👇 type the hover props for an <article> element specifically
-export const cardHoverArticle: HTMLMotionProps<'article'> = {
-  whileHover: { scale: 1.05 },
-  transition: { type: 'spring', stiffness: 300 },
-};
+export const cardHoverArticle = {
+  whileHover: { y: -4, scale: 1.01 },
+  whileTap: { scale: 0.99 },
+  transition: { type: 'spring', stiffness: 260, damping: 20 },
+} as const;
 
 export const cardHoverSmall = {
   whileHover: { scale: 1.02 },
