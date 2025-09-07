@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint --dir src",
     "lint:fix": "eslint --fix src",
     "format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -48,6 +49,9 @@
     "*.{md,json,yml,yaml,css,scss}": [
       "prettier --write"
     ]
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
   },
   "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
   "main": "index.js",
