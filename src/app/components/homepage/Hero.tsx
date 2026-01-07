@@ -25,7 +25,7 @@ const ICONS = [
     label: 'Twitter / X',
   },
   {
-    href: '/projects/Resume.pdf',
+    href: 'Resume.pdf',
     icon: <FaFileAlt />,
     label: 'Resume',
     tooltip: 'View Resume',
