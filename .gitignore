@@ -22,6 +22,7 @@
 
 # misc
 .DS_Store
+.idea/
 *.pem
 env-variable-notes-prisma.txt
 
@@ -46,4 +47,3 @@ next-env.d.ts
 /src/generated/prisma
 
 /src/generated/prisma
-
