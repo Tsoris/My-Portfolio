@@ -16,12 +16,33 @@ datasource db {
 }
 
 model ContactMessage {
-  id        String   @id @default(cuid())
-  name      String
-  email     String
-  message   String
-  createdAt DateTime @default(now())
-  ip        String?
-  userAgent String?
-  source    String?
+  id         String   @id @default(cuid())
+  name       String
+  email      String
+  message    String
+  createdAt  DateTime @default(now())
+  readAt     DateTime?
+  archivedAt DateTime?
+  ip         String?
+  userAgent  String?
+  source     String?
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model BlogPost {
+  id          String     @id @default(cuid())
+  title       String
+  slug        String     @unique
+  excerpt     String
+  content     String
+  status      PostStatus @default(DRAFT)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  publishedAt DateTime?
+
+  @@index([status, publishedAt])
 }
