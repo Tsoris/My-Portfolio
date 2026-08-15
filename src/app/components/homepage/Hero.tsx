@@ -49,12 +49,11 @@ function Hero() {
           className='flex flex-col items-center mb-4'
         >
           <Image
-            src='/profile.png'
-            alt='profile image'
-            width={100}
-            height={100}
-            className='
-            rounded-full mb-4 w-32 h-32 object-cover object-[center_20%] p-1 ring-2 ring-primary'
+            src='/profile-2026.png'
+            alt='Portrait of Timothy Sorisa'
+            width={200}
+            height={200}
+            className='aspect-square rounded-full object-cover object-center ring-2 ring-primary'
           />
         </motion.div>
 

@@ -1,6 +1,20 @@
-import React from 'react';
-import { FaCode } from 'react-icons/fa';
+import SkillCard from '../components/aboutpage/SkillCard';
 import Timeline from '../components/aboutpage/Timeline';
+
+const skillGroups = [
+  {
+    title: 'Frontend',
+    skills: ['React / Next.js', 'TypeScript', 'Tailwind CSS', 'HTML5 / CSS3'],
+  },
+  {
+    title: 'Backend',
+    skills: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB'],
+  },
+  {
+    title: 'Tools & Platforms',
+    skills: ['Git / GitHub', 'Docker', 'AWS', 'CI/CD'],
+  },
+];
 
 function About() {
   return (
@@ -21,36 +35,13 @@ function About() {
       <section className='mb-16'>
         <h2 className='section-title'>Skills</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-          <div className='bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md'>
-            <FaCode className='h-8 w-8 text-primary mb-4' />
-            <h3 className='text-xl font-semibold mb-2'>Frontend</h3>
-            <ul className='text-secondary space-y-2'>
-              <li>react / Next.js</li>
-              <li>TypeScript</li>
-              <li>Tailwind CSS</li>
-              <li>HTML5 / CSS3</li>
-            </ul>
-          </div>
-          <div className='bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md'>
-            <FaCode className='h-8 w-8 text-primary mb-4' />
-            <h3 className='text-xl font-semibold mb-2'>BackEnd</h3>
-            <ul className='text-secondary space-y-2'>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>PostgreSQL</li>
-              <li>MongoDB</li>
-            </ul>
-          </div>
-          <div className='bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md'>
-            <FaCode className='h-8 w-8 text-primary mb-4' />
-            <h3 className='text-xl font-semibold mb-2'>Tools & Others</h3>
-            <ul className='text-secondary space-y-2'>
-              <li>Git / GitHub</li>
-              <li>Docker</li>
-              <li>AWS</li>
-              <li>CI/CD</li>
-            </ul>
-          </div>
+          {skillGroups.map((group) => (
+            <SkillCard
+              key={group.title}
+              title={group.title}
+              skills={group.skills}
+            />
+          ))}
         </div>
       </section>
       <Timeline />

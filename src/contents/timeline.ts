@@ -1,48 +1,78 @@
-import { Timeline } from "@/types";
+import type { Timeline } from '@/types';
 
 export const timeline: Timeline[] = [
   {
-    title: "B.S. Computer Science (in progress)",
-    org: "Oregon State University",
-    href: "https://ecampus.oregonstate.edu/",
-    start: "Sep 2025",
-    end: "Sep 2027 (est.)",
+    title: 'Undergraduate Learning Assistant',
+    org: 'Oregon State University',
+    href: 'https://oregonstate.edu/',
+    location: 'Remote',
+    start: 'Mar 2026',
+    end: 'Present',
     bullets: [
-      "Post-Bacc track; Discrete Structures, Data Structures, Systems.",
-      "Programming Fundamentals microcredential underway."
+      'Guide students through discrete mathematics topics including logic, proofs, and set theory.',
+      'Lead office hours that help students strengthen their reasoning and problem-solving skills.',
     ],
   },
   {
-    title: "Software Development Engineer",
-    org: "Amazon",
-    href: "https://www.amazon.com/",
-    start: "Oct 2022",
-    end: "Mar 2024",
+    title: 'B.S. in Computer Science',
+    org: 'Oregon State University',
+    href: 'https://oregonstate.edu/',
+    location: 'Corvallis, OR',
+    start: 'Sep 2025',
+    end: 'Expected Dec 2027',
     bullets: [
-      "Architected ELT pipelines to aggregate customer shopping data for faster fund-allocation decisions.",
-      "Refactored legacy services; improved maintainability and developer experience.",
-      "Optimized AWS stack (Lambda, S3, SQS, VPC); reduced costs and increased reliability.",
-      "Hardened resilience with automated fail-safes and better error transparency."
+      'Relevant coursework includes Discrete Structures, Data Structures, and Web Development.',
+      'Current GPA: 4.0.',
     ],
   },
   {
-    title: "Amazon Technical Academy",
-    org: "ATA",
-    start: "Feb 2022",
-    end: "Oct 2022",
+    title: 'Software Development Engineer (Apprentice)',
+    org: 'Amazon Ads',
+    href: 'https://advertising.amazon.com/',
+    location: 'Santa Monica, CA',
+    start: 'Oct 2022',
+    end: 'Mar 2024',
     bullets: [
-      "Selective internal SWE training; transitioned from associate to SDE.",
-      "Built production services and learned AWS-first development."
+      'Designed and optimized distributed systems processing millions of records daily for advertiser fund distribution.',
+      'Owned serverless data pipelines built with AWS Lambda, SQS, S3, VPC, and CDK.',
+      'Refactored Java and TypeScript services to improve performance, reliability, and maintainability.',
+      'Partnered with product and UI/UX teams to improve front-end workflows and reduce user friction.',
+      'Implemented automated testing, monitoring, and deployment safeguards for reliable releases.',
     ],
   },
   {
-    title: "B.S Health Sciences",
-    org: "University Of South Florida",
-    href: "https://www.usf.edu/",
-    start: "Aug 2013",
-    end: "May 2018",
+    title: 'Amazon Technical Academy Participant',
+    org: 'Amazon Technical Academy',
+    href: 'https://www.amazon.jobs/content/en/career-programs/university/technical-academy',
+    location: 'Remote',
+    start: 'Feb 2022',
+    end: 'Oct 2022',
     bullets: [
-      "Built a foundation in research, problem-solving, and data analysis through a demanding STEM curriculum."
+      'Completed a full-time software engineering program covering Java, data structures, algorithms, distributed systems, and engineering best practices.',
+      'Built production-style applications using object-oriented design and AWS services.',
+    ],
+  },
+  {
+    title: 'Learning Ambassador / Amazon Associate',
+    org: 'Amazon Fulfillment',
+    href: 'https://www.amazon.jobs/content/en/job-categories/fulfillment-operations-management',
+    location: 'Lakeland, FL',
+    start: 'Dec 2020',
+    end: 'Feb 2022',
+    bullets: [
+      'Trained and mentored associates in high-volume outbound operations.',
+      'Selected for Amazon Technical Academy, a competitive internal software engineering program.',
+    ],
+  },
+  {
+    title: 'B.S. in Health Sciences',
+    org: 'University of South Florida',
+    href: 'https://www.usf.edu/',
+    location: 'Tampa, FL',
+    start: 'Aug 2013',
+    end: 'May 2018',
+    bullets: [
+      'Completed an interdisciplinary health sciences curriculum with a strong STEM foundation.',
     ],
   },
 ];
