@@ -9,8 +9,9 @@ export const timeline: Timeline[] = [
     start: 'Mar 2026',
     end: 'Present',
     bullets: [
-      'Guide students through discrete mathematics topics including logic, proofs, and set theory.',
-      'Lead office hours that help students strengthen their reasoning and problem-solving skills.',
+      'Guide students through logic, proof techniques, and set theory by translating abstract concepts into clear, repeatable problem-solving strategies',
+      'Lead virtual office hours and collaborative discussions that strengthen mathematical reasoning and independent problem solving',
+      'Evaluate discrete mathematics assignments and provide actionable feedback on students’ logic, proof structure, and problem-solving approaches',
     ],
   },
   {
@@ -21,8 +22,8 @@ export const timeline: Timeline[] = [
     start: 'Sep 2025',
     end: 'Expected Dec 2027',
     bullets: [
-      'Relevant coursework includes Discrete Structures, Data Structures, and Web Development.',
-      'Current GPA: 4.0.',
+      'Relevant coursework includes Discrete Structures, Data Structures, Computer Architecture & Assembly Language, and Web Development',
+      'Current GPA: 4.0',
     ],
   },
   {
@@ -33,11 +34,11 @@ export const timeline: Timeline[] = [
     start: 'Oct 2022',
     end: 'Mar 2024',
     bullets: [
-      'Designed and optimized distributed systems processing millions of records daily for advertiser fund distribution.',
-      'Owned serverless data pipelines built with AWS Lambda, SQS, S3, VPC, and CDK.',
-      'Refactored Java and TypeScript services to improve performance, reliability, and maintainability.',
-      'Partnered with product and UI/UX teams to improve front-end workflows and reduce user friction.',
-      'Implemented automated testing, monitoring, and deployment safeguards for reliable releases.',
+      'Designed and optimized distributed systems processing millions of records daily for advertiser fund distribution',
+      'Owned serverless data pipelines built with AWS Lambda, SQS, S3, VPC, and CDK',
+      'Refactored Java and TypeScript services to improve performance, reliability, and maintainability',
+      'Partnered with product and UI/UX teams to improve front-end workflows and reduce user friction',
+      'Implemented automated testing, monitoring, and deployment safeguards for reliable releases',
     ],
   },
   {
@@ -48,8 +49,8 @@ export const timeline: Timeline[] = [
     start: 'Feb 2022',
     end: 'Oct 2022',
     bullets: [
-      'Completed a full-time software engineering program covering Java, data structures, algorithms, distributed systems, and engineering best practices.',
-      'Built production-style applications using object-oriented design and AWS services.',
+      'Completed a full-time software engineering program covering Java, data structures, algorithms, distributed systems, and engineering best practices',
+      'Built production-style applications using object-oriented design and AWS services',
     ],
   },
   {
@@ -60,8 +61,8 @@ export const timeline: Timeline[] = [
     start: 'Dec 2020',
     end: 'Feb 2022',
     bullets: [
-      'Trained and mentored associates in high-volume outbound operations.',
-      'Selected for Amazon Technical Academy, a competitive internal software engineering program.',
+      'Trained and mentored associates in high-volume outbound operations',
+      'Selected for Amazon Technical Academy, a competitive internal software engineering program',
     ],
   },
   {
@@ -72,7 +73,7 @@ export const timeline: Timeline[] = [
     start: 'Aug 2013',
     end: 'May 2018',
     bullets: [
-      'Completed an interdisciplinary health sciences curriculum with a strong STEM foundation.',
+      'Completed an interdisciplinary health sciences curriculum with a strong STEM foundation',
     ],
   },
 ];

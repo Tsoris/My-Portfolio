@@ -85,9 +85,7 @@ const Timeline = () => {
                   }}
                   className={[
                     'md:w-[46%]',
-                    index % 2 === 0
-                      ? 'md:ml-[54%]'
-                      : 'md:mr-[54%] md:text-right',
+                    index % 2 === 0 ? 'md:ml-[54%]' : 'md:mr-[54%]',
                   ].join(' ')}
                 >
                   <motion.div
