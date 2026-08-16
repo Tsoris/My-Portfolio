@@ -44,7 +44,7 @@ export const timeline: Timeline[] = [
   {
     title: 'Amazon Technical Academy Participant',
     org: 'Amazon Technical Academy',
-    href: 'https://www.amazon.jobs/content/en/career-programs/university/technical-academy',
+    href: '',
     location: 'Remote',
     start: 'Feb 2022',
     end: 'Oct 2022',
