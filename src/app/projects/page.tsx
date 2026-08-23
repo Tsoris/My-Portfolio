@@ -1,8 +1,14 @@
+'use client';
+
 import { projects } from '@/contents/projects';
 import Link from 'next/link';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { cardHoverArticle, cardReveal, listStagger } from '@/utils/animations';
 import ProjectVisual from '@/app/components/projects/ProjectVisual';
 import ProjectTechnologies from '@/app/components/projects/ProjectTechnologies';
+
+const MotionArticle = motion('article');
 
 const Projects = () => {
   if (projects.length === 0) {
@@ -30,11 +36,20 @@ const Projects = () => {
         Here are some of my recent projects. Click on the links to view the code
         or live demo.
       </p>
-      {/* This div contains logic to create Project Cards */}
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+      <motion.div
+        variants={listStagger}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true, amount: 0.05 }}
+        className='grid grid-cols-1 md:grid-cols-3 gap-8'
+      >
         {projects.map((project) => (
-          <article
-            key={project.title}
+          <MotionArticle
+            key={project.id}
+            variants={cardReveal}
+            whileHover={cardHoverArticle.whileHover}
+            whileTap={cardHoverArticle.whileTap}
+            transition={cardHoverArticle.transition}
             className='grid row-span-5 grid-rows-subgrid gap-y-0 bg-white dark:bg-dark/50 rounded-lg shadow-md p-6'
           >
             <ProjectVisual project={project} />
@@ -70,9 +85,9 @@ const Projects = () => {
                 </span>
               )}
             </div>
-          </article>
+          </MotionArticle>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
