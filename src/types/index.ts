@@ -1,12 +1,14 @@
-import { string } from 'zod';
+export type ProjectVisualTheme = 'default' | 'chess';
 
 export interface Project {
   id: string;
   title: string;
+  projectType?: string;
+  visualTheme?: ProjectVisualTheme;
   description: string;
   technologies: string[];
   githubLink: string;
-  demoLink: string;
+  demoLink?: string;
   image?: string;
 }
 
