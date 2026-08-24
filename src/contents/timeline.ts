@@ -15,7 +15,7 @@ export const timeline: Timeline[] = [
     ],
   },
   {
-    title: 'B.S. in Computer Science',
+    title: 'B.S. in Computer Science | GPA: 4.0',
     org: 'Oregon State University',
     href: 'https://oregonstate.edu/',
     location: 'Corvallis, OR',
@@ -23,7 +23,6 @@ export const timeline: Timeline[] = [
     end: 'Expected Dec 2027',
     bullets: [
       'Relevant coursework includes Discrete Structures, Data Structures, Computer Architecture & Assembly Language, and Web Development',
-      'Current GPA: 4.0',
     ],
   },
   {
@@ -49,7 +48,7 @@ export const timeline: Timeline[] = [
     start: 'Feb 2022',
     end: 'Oct 2022',
     bullets: [
-      'Completed a full-time software engineering program covering Java, data structures, algorithms, distributed systems, and engineering best practices',
+      'Completed a full-time paid software engineering program covering Java, data structures, algorithms, distributed systems, and engineering best practices',
       'Built production-style applications using object-oriented design and AWS services',
     ],
   },

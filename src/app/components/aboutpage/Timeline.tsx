@@ -19,7 +19,7 @@ const Timeline = () => {
       >
         <h2>Education &amp; Experience</h2>
         <Link
-          href='/Resume.pdf'
+          href='https://github.com/Tsoris/MyResume/blob/main/docs/Resume.pdf'
           target='_blank'
           rel='noopener noreferrer'
           className='relative group text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'

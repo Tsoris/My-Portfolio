@@ -25,7 +25,7 @@ const ICONS = [
     label: 'Twitter / X',
   },
   {
-    href: 'Resume.pdf',
+    href: 'https://github.com/Tsoris/MyResume/blob/main/docs/Resume.pdf',
     icon: <FaFileAlt />,
     label: 'Resume',
     tooltip: 'View Resume',
