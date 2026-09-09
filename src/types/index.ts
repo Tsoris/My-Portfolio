@@ -1,4 +1,9 @@
-export type ProjectVisualTheme = 'default' | 'chess';
+export type ProjectVisualTheme =
+  | 'default'
+  | 'chess'
+  | 'assembly'
+  | 'animal-game'
+  | 'hash-map';
 
 export interface Project {
   id: string;
@@ -7,8 +12,9 @@ export interface Project {
   visualTheme?: ProjectVisualTheme;
   description: string;
   technologies: string[];
-  githubLink: string;
+  githubLink?: string;
   demoLink?: string;
+  demoLabel?: string;
   image?: string;
 }
 

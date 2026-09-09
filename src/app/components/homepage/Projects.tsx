@@ -1,9 +1,9 @@
 'use client';
 import { projects } from '@/contents/projects';
 import Link from 'next/link';
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { cardHoverArticle, cardReveal, listStagger } from '@/utils/animations';
+import ProjectActions from '@/app/components/projects/ProjectActions';
 import ProjectVisual from '@/app/components/projects/ProjectVisual';
 import ProjectTechnologies from '@/app/components/projects/ProjectTechnologies';
 
@@ -35,7 +35,7 @@ function Projects() {
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.05 }}
-          className='grid grid-cols-1 md:grid-cols-3 gap-8'
+          className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
         >
           {projects.map((project) => (
             <MotionArticle
@@ -54,33 +54,7 @@ function Projects() {
               </p>
 
               <ProjectTechnologies project={project} />
-
-              <div className='flex gap-4 pt-4'>
-                <Link
-                  href={project.githubLink}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex items-center gap-2 text-secondary hover:text-primary transition-colors'
-                >
-                  <FaGithub className='w-5 h-5' /> <span>Code</span>
-                </Link>
-
-                {project.demoLink ? (
-                  <Link
-                    href={project.demoLink}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='flex items-center gap-2 text-secondary hover:text-primary transition-colors'
-                  >
-                    <FaExternalLinkAlt className='w-5 h-5' />{' '}
-                    <span>Live Demo</span>
-                  </Link>
-                ) : (
-                  <span className='text-gray-400 dark:text-gray-500'>
-                    Demo Coming Soon
-                  </span>
-                )}
-              </div>
+              <ProjectActions project={project} />
             </MotionArticle>
           ))}
         </motion.div>
