@@ -22,7 +22,7 @@ const Timeline = () => {
           href='https://github.com/Tsoris/MyResume/blob/main/docs/Resume.pdf'
           target='_blank'
           rel='noopener noreferrer'
-          className='relative group text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'
+          className='relative group text-2xl text-gray-800 hover:text-primary dark:text-gray-200 transition-colors duration-300'
           aria-label='View resume'
         >
           <FaFileAlt />
@@ -107,7 +107,7 @@ const Timeline = () => {
                         <h3 className='text-lg font-medium leading-tight'>
                           {item.title}
                         </h3>
-                        <p className='text-sm text-zinc-600 dark:text-zinc-400'>
+                        <p className='text-sm text-zinc-800 dark:text-zinc-200'>
                           {item.href ? (
                             <a
                               href={item.href}
@@ -122,22 +122,22 @@ const Timeline = () => {
                           )}
                         </p>
                         {item.location && (
-                          <p className='text-xs text-zinc-500 dark:text-zinc-500'>
+                          <p className='text-xs text-zinc-700 dark:text-zinc-300'>
                             {item.location}
                           </p>
                         )}
                       </div>
-                      <span className='shrink-0 text-xs px-2 py-1 rounded-full bg-blue-50 text-blue-700 dark:bg-zinc-800 dark:text-zinc-300'>
+                      <span className='shrink-0 text-xs px-2 py-1 rounded-full bg-blue-50 text-blue-800 dark:bg-zinc-800 dark:text-zinc-200'>
                         {item.start} - {item.end}
                       </span>
                     </div>
 
-                    <ul className='mt-3 space-y-2 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed'>
+                    <ul className='mt-3 space-y-2 text-sm text-zinc-800 dark:text-zinc-200 leading-relaxed'>
                       {item.bullets.map((bullet) => (
                         <li key={bullet} className='pl-4 relative'>
                           <span
                             aria-hidden
-                            className='absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-zinc-400 dark:bg-zinc-500/70'
+                            className='absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-zinc-500 dark:bg-zinc-400/80'
                           />
                           {bullet}
                         </li>

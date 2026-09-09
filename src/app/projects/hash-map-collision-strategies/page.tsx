@@ -47,7 +47,7 @@ const HashMapCollisionStrategiesPage = () => (
         {technologies.map((technology) => (
           <span
             key={technology}
-            className='rounded-full bg-cyan-700/10 px-3 py-1 text-sm text-cyan-700 dark:bg-cyan-300/10 dark:text-cyan-200'
+            className='rounded-full bg-cyan-700/10 px-3 py-1 text-sm text-cyan-700 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:scale-105 hover:shadow-md dark:bg-cyan-300/10 dark:text-cyan-200 motion-reduce:transform-none motion-reduce:transition-none'
           >
             {technology}
           </span>

@@ -13,7 +13,7 @@ const ProjectTechnologies = ({ project }: ProjectTechnologiesProps) => {
       {project.technologies.map((technology, index) => (
         <span
           key={`${project.id}-${technology}-${index}`}
-          className={`${technologyClassName} rounded-full px-3 py-1 text-sm`}
+          className={`${technologyClassName} rounded-full px-3 py-1 text-sm transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:scale-105 hover:shadow-md motion-reduce:transform-none motion-reduce:transition-none`}
         >
           {technology}
         </span>
