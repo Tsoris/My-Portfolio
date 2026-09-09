@@ -51,7 +51,7 @@ const TemperatureDataParserPage = () => (
         {technologies.map((technology) => (
           <span
             key={technology}
-            className='rounded-full bg-amber-500/10 px-3 py-1 text-sm text-amber-700 dark:bg-amber-300/10 dark:text-amber-200'
+            className='rounded-full bg-amber-500/10 px-3 py-1 text-sm text-amber-700 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:scale-105 hover:shadow-md dark:bg-amber-300/10 dark:text-amber-200 motion-reduce:transform-none motion-reduce:transition-none'
           >
             {technology}
           </span>

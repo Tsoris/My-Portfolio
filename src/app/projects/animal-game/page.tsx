@@ -75,7 +75,7 @@ const AnimalGamePage = () => (
         {technologies.map((technology) => (
           <span
             key={technology}
-            className='rounded-full bg-purple-700/10 px-3 py-1 text-sm text-purple-700 dark:bg-orange-300/10 dark:text-orange-200'
+            className='rounded-full bg-purple-700/10 px-3 py-1 text-sm text-purple-700 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:scale-105 hover:shadow-md dark:bg-orange-300/10 dark:text-orange-200 motion-reduce:transform-none motion-reduce:transition-none'
           >
             {technology}
           </span>
