@@ -205,6 +205,54 @@ const HashMapProjectVisual = ({ project }: ThemeVisualProps) => (
   </div>
 );
 
+const ExerciseTrackerProjectVisual = ({ project }: ThemeVisualProps) => (
+  <div
+    aria-hidden
+    className='relative aspect-video mb-4 overflow-hidden rounded-lg bg-gradient-to-br from-emerald-950 via-slate-950 to-teal-950 p-6 text-white'
+  >
+    <div className='absolute right-4 top-4 w-[48%] overflow-hidden rounded-lg border border-emerald-200/20 bg-slate-900/80 shadow-2xl backdrop-blur-sm'>
+      <div className='flex items-center justify-between border-b border-white/10 px-3 py-2'>
+        <span className='text-[0.55rem] font-semibold uppercase tracking-[0.16em] text-emerald-300 sm:text-[0.65rem]'>
+          Recent workouts
+        </span>
+        <span className='rounded bg-emerald-400/15 px-1.5 py-0.5 text-[0.5rem] text-emerald-200 sm:text-[0.6rem]'>
+          + Add
+        </span>
+      </div>
+      {[
+        ['Run', '30 min'],
+        ['Cycling', '45 min'],
+        ['Strength', '40 min'],
+      ].map(([activity, duration], index) => (
+        <div
+          key={activity}
+          className={`flex items-center justify-between px-3 py-2 text-[0.55rem] sm:text-[0.65rem] ${
+            index < 2 ? 'border-b border-white/5' : ''
+          }`}
+        >
+          <span className='flex items-center gap-2 text-slate-200'>
+            <span className='h-1.5 w-1.5 rounded-full bg-emerald-400' />
+            {activity}
+          </span>
+          <span className='text-slate-400'>{duration}</span>
+        </div>
+      ))}
+    </div>
+    <div className='absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/92 to-transparent' />
+    <div className='relative z-10 flex h-full max-w-[60%] flex-col justify-between'>
+      <span className='text-xs font-medium uppercase tracking-[0.2em] text-emerald-200'>
+        {project.projectType ?? 'Full-stack application'}
+      </span>
+      <div>
+        <p className='text-2xl font-bold tracking-tight sm:text-3xl'>
+          Exercise Tracker
+        </p>
+        <p className='mt-2 text-sm text-teal-100'>React · Express · MongoDB</p>
+      </div>
+    </div>
+  </div>
+);
+
 const visualThemeRegistry = {
   default: {
     Visual: DefaultProjectVisual,
@@ -229,6 +277,11 @@ const visualThemeRegistry = {
     Visual: HashMapProjectVisual,
     technologyClassName:
       'bg-cyan-700/10 text-cyan-700 dark:bg-cyan-300/10 dark:text-cyan-200',
+  },
+  'exercise-tracker': {
+    Visual: ExerciseTrackerProjectVisual,
+    technologyClassName:
+      'bg-emerald-700/10 text-emerald-700 dark:bg-emerald-300/10 dark:text-emerald-200',
   },
 } satisfies Record<
   ProjectVisualTheme,

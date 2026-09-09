@@ -24,7 +24,7 @@ const SkillCard = ({ title, skills }: SkillCardProps) => {
               mass: 0.65,
             }
       }
-      className='bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md'
+      className='rounded-lg border border-gray-200 bg-white p-6 shadow-md dark:border-transparent dark:bg-dark/50'
     >
       <FaCode className='h-8 w-8 text-primary mb-4' />
       <h3 className='text-xl font-semibold mb-2'>{title}</h3>

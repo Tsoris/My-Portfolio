@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { FaArrowLeft, FaLock } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
+import PrivateCodeAction from '@/app/components/projects/PrivateCodeAction';
 import HashMapDemo from './HashMapDemo';
 
 const title = 'HashMap Collision Strategies | Tim’s Devfolio';
@@ -204,14 +205,7 @@ const HashMapCollisionStrategiesPage = () => (
           The project also uses the separate-chaining map to calculate one or
           more modes and their frequency from a dynamic array.
         </p>
-        <div className='flex items-start gap-3 rounded-xl bg-gray-100 p-4 text-sm dark:bg-gray-800'>
-          <FaLock className='mt-1 h-4 w-4 shrink-0' />
-          <p>
-            The original coursework source remains private. This visualization
-            demonstrates the underlying behavior without publishing a reusable
-            assignment solution.
-          </p>
-        </div>
+        <PrivateCodeAction />
       </div>
     </section>
   </div>

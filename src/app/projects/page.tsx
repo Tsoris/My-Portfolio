@@ -50,7 +50,7 @@ const Projects = () => {
             whileHover={cardHoverArticle.whileHover}
             whileTap={cardHoverArticle.whileTap}
             transition={cardHoverArticle.transition}
-            className='grid row-span-5 grid-rows-subgrid gap-y-0 bg-white dark:bg-dark/50 rounded-lg shadow-md p-6'
+            className='grid row-span-5 grid-rows-subgrid gap-y-0 rounded-lg border border-gray-200 bg-white p-6 shadow-md dark:border-transparent dark:bg-dark/50'
           >
             <ProjectVisual project={project} />
 

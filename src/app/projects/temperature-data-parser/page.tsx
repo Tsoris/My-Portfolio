@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { FaArrowLeft, FaLock } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
+import PrivateCodeAction from '@/app/components/projects/PrivateCodeAction';
 import TemperatureDemo from './TemperatureDemo';
 
 const title = 'Temperature Data Parser | Tim’s Devfolio';
@@ -113,13 +114,7 @@ const TemperatureDataParserPage = () => (
           procedure parameters, register preservation, and error handling for
           unsuccessful file operations.
         </p>
-        <div className='flex items-start gap-3 rounded-xl bg-gray-100 p-4 text-sm dark:bg-gray-800'>
-          <FaLock className='mt-1 h-4 w-4 shrink-0' />
-          <p>
-            The complete source remains private to protect the academic
-            integrity of an assignment that may be reused in future classes.
-          </p>
-        </div>
+        <PrivateCodeAction />
       </div>
     </section>
   </div>

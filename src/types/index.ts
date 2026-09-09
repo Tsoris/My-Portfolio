@@ -3,7 +3,8 @@ export type ProjectVisualTheme =
   | 'chess'
   | 'assembly'
   | 'animal-game'
-  | 'hash-map';
+  | 'hash-map'
+  | 'exercise-tracker';
 
 export interface Project {
   id: string;
@@ -13,8 +14,11 @@ export interface Project {
   description: string;
   technologies: string[];
   githubLink?: string;
+  sourcePrivate?: boolean;
   demoLink?: string;
+  demoComingSoonLink?: string;
   demoLabel?: string;
+  demoNote?: string;
   image?: string;
 }
 

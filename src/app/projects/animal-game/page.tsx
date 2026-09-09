@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowLeft, FaBullseye, FaCheck, FaLock } from 'react-icons/fa';
+import { FaArrowLeft, FaBullseye, FaCheck } from 'react-icons/fa';
+import PrivateCodeAction from '@/app/components/projects/PrivateCodeAction';
 import AnimalGameDemo from './AnimalGameDemo';
 
 const title = 'AnimalGame | Tim’s Devfolio';
@@ -200,13 +201,7 @@ const AnimalGamePage = () => (
             wins.
           </p>
         </div>
-        <div className='flex items-start gap-3 rounded-xl bg-gray-100 p-4 text-sm dark:bg-gray-800'>
-          <FaLock className='mt-1 h-4 w-4 shrink-0' />
-          <p>
-            The complete Python source remains private to protect the academic
-            integrity of coursework that may be reused.
-          </p>
-        </div>
+        <PrivateCodeAction />
       </div>
     </section>
   </div>
