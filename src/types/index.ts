@@ -29,6 +29,11 @@ export interface Blog {
   date: string;
   readTime: string;
   slug: string;
+  tags: string[];
+}
+
+export interface BlogPost extends Blog {
+  content: string;
 }
 
 export interface Timeline {

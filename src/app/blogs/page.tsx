@@ -1,53 +1,37 @@
-import { blogs } from '@/contents/blogs';
-import Link from 'next/link';
-import React from 'react';
-import { FaCalendarAlt, FaClock } from 'react-icons/fa';
+import BlogCard from '@/app/components/blogs/BlogCard';
+import { getAllBlogs } from '@/lib/blogs';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Blog | Tim's Devfolio",
+  description:
+    'Notes on software engineering, computer science, and the lessons behind the projects I build.',
+};
 
 function Blogs() {
-  if (blogs.length === 0) {
-    return (
-      <section className='container max-w-3xl mx-auto px-4 py-20 text-center'>
-        <h1 className='text-4xl font-bold mb-6'>Blog</h1>
-        <p className='text-lg text-secondary'>
-          I&apos;m working on my first articles. Check back soon for practical
-          notes from my software development journey.
-        </p>
-      </section>
-    );
-  }
+  const blogs = getAllBlogs();
 
   return (
-    <div className='container max-w-7xl mx-auto py-20'>
-      <h1 className='text-4xl font-bold mb-20 text-center'>Blog Post</h1>
-      {/* This div contains logic to create Blog Cards */}
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+    <section className='container max-w-5xl py-16 sm:py-20'>
+      <header className='max-w-3xl'>
+        <p className='text-sm font-semibold uppercase tracking-[0.2em] text-primary'>
+          Field notes
+        </p>
+        <h1 className='mt-3 text-4xl font-bold tracking-tight sm:text-5xl'>
+          Blog
+        </h1>
+        <p className='mt-5 text-lg leading-8 text-gray-600 dark:text-gray-300'>
+          Notes on software engineering, computer science, and the lessons
+          behind the projects I build.
+        </p>
+      </header>
+
+      <div className='mt-12 grid grid-cols-1 gap-8 md:grid-cols-2'>
         {blogs.map((blog) => (
-          <article
-            key={blog.slug}
-            className='bg:white dark:bg-dark/50 rounded-lg shadow-md p-6'
-          >
-            <Link href={`/blog/${blog.slug}`}>
-              <h3 className='text-xl font-semibold mb-2 hover:text-primary transition-colors'>
-                {blog.title}
-              </h3>
-            </Link>
-            <p className='text-gray-600 dark:text-gray-300 mb-4'>
-              {blog.excerpt}
-            </p>
-            <div className='flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-4'>
-              <span className='flex items-center'>
-                <FaCalendarAlt className='mr-2' />
-                {new Date(blog.date).toLocaleDateString()}
-              </span>
-              <span className='flex items-center'>
-                <FaClock className='mr-2' />
-                {blog.readTime}
-              </span>
-            </div>
-          </article>
+          <BlogCard key={blog.slug} blog={blog} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
