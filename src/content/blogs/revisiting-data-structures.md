@@ -5,6 +5,9 @@ excerpt:
   'I am returning to data structures to build deeper intuition about how they
   work, the tradeoffs they make, and when to use them.'
 readTime: '3 min read'
+series:
+  name: 'Revisiting Data Structures'
+  order: 1
 tags:
   - Data Structures
   - Computer Science

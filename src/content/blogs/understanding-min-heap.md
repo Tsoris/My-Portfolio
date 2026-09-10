@@ -5,6 +5,9 @@ excerpt:
   'How min-heaps use complete binary trees, array indexing, and percolation to
   implement efficient priority queues.'
 readTime: '6 min read'
+series:
+  name: 'Revisiting Data Structures'
+  order: 2
 tags:
   - Data Structures
   - CS Fundamentals

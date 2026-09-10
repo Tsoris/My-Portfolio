@@ -5,7 +5,12 @@ import type { Blog } from '@/types';
 import { cardHoverArticle } from '@/utils/animations';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { FaArrowRight, FaCalendarAlt, FaClock } from 'react-icons/fa';
+import {
+  FaArrowRight,
+  FaBookOpen,
+  FaCalendarAlt,
+  FaClock,
+} from 'react-icons/fa';
 
 interface BlogCardProps {
   blog: Blog;
@@ -18,6 +23,16 @@ const BlogCard = ({ blog }: BlogCardProps) => (
     transition={cardHoverArticle.transition}
     className='flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-dark/50'
   >
+    {blog.series && (
+      <div className='-mx-6 -mt-6 mb-5 flex items-center gap-2 rounded-t-xl border-b border-primary/20 bg-primary/10 px-6 py-3 text-sm font-medium text-primary'>
+        <FaBookOpen aria-hidden className='shrink-0' />
+        <span className='truncate'>{blog.series.name}</span>
+        <span className='ml-auto shrink-0'>
+          {blog.series.position} of {blog.series.total}
+        </span>
+      </div>
+    )}
+
     <div className='mb-4 flex flex-wrap gap-2'>
       {blog.tags.map((tag) => (
         <span

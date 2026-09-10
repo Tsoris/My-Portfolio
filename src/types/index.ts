@@ -30,6 +30,11 @@ export interface Blog {
   readTime: string;
   slug: string;
   tags: string[];
+  series?: {
+    name: string;
+    position: number;
+    total: number;
+  };
 }
 
 export interface BlogPost extends Blog {

@@ -4,7 +4,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
-import { FaArrowLeft, FaCalendarAlt, FaClock } from 'react-icons/fa';
+import {
+  FaArrowLeft,
+  FaBookOpen,
+  FaCalendarAlt,
+  FaClock,
+} from 'react-icons/fa';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -50,6 +55,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </Link>
 
       <header className='mt-10 border-b border-gray-200 pb-8 dark:border-gray-700'>
+        {blog.series && (
+          <div className='mb-5 flex items-center gap-2 rounded-xl border border-primary/20 bg-primary/10 px-4 py-3 text-sm font-medium text-primary'>
+            <FaBookOpen aria-hidden className='shrink-0' />
+            <span>{blog.series.name}</span>
+            <span className='ml-auto shrink-0'>
+              Part {blog.series.position} of {blog.series.total}
+            </span>
+          </div>
+        )}
+
         <div className='flex flex-wrap gap-2'>
           {blog.tags.map((tag) => (
             <span
