@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title description">
+  <title id="title">Insert a value into a min-heap</title>
+  <desc id="description">Three stages show the value 3 added at the next open position, compared with its parent 8, and swapped upward to restore the min-heap property.</desc>
+  <style>
+    .panel { fill: #111c30; stroke: #334155; stroke-width: 2; }
+    .edge { stroke: #64748b; stroke-width: 3; stroke-linecap: round; }
+    .node { fill: #1e3a5f; stroke: #60a5fa; stroke-width: 2; }
+    .moving { fill: #c2410c; stroke: #fdba74; stroke-width: 3; }
+    .value { fill: #f8fafc; font: 700 18px Arial, sans-serif; text-anchor: middle; dominant-baseline: middle; }
+    .step { fill: #93c5fd; font: 700 13px Arial, sans-serif; letter-spacing: 1.5px; }
+    .caption { fill: #cbd5e1; font: 15px Arial, sans-serif; }
+  </style>
+
+  <rect width="960" height="500" rx="28" fill="#0f172a" />
+  <text x="48" y="54" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Insert: percolate up</text>
+  <text x="48" y="82" fill="#94a3b8" font-family="Arial, sans-serif" font-size="16">Append at the next open position, then compare upward.</text>
+
+  <rect class="panel" x="32" y="112" width="280" height="330" rx="18" />
+  <text class="step" x="54" y="144">1  APPEND</text>
+  <text class="caption" x="54" y="169">Place 3 at index 6.</text>
+  <g class="edge">
+    <line x1="172" y1="217" x2="112" y2="262" /><line x1="172" y1="217" x2="232" y2="262" />
+    <line x1="112" y1="294" x2="76" y2="342" /><line x1="112" y1="294" x2="148" y2="342" />
+    <line x1="232" y1="294" x2="204" y2="342" /><line x1="232" y1="294" x2="268" y2="342" />
+  </g>
+  <g><circle class="node" cx="172" cy="207" r="24" /><text class="value" x="172" y="207">2</text></g>
+  <g><circle class="node" cx="112" cy="278" r="24" /><text class="value" x="112" y="278">5</text></g>
+  <g><circle class="node" cx="232" cy="278" r="24" /><text class="value" x="232" y="278">8</text></g>
+  <g><circle class="node" cx="76" cy="358" r="24" /><text class="value" x="76" y="358">10</text></g>
+  <g><circle class="node" cx="148" cy="358" r="24" /><text class="value" x="148" y="358">7</text></g>
+  <g><circle class="node" cx="204" cy="358" r="24" /><text class="value" x="204" y="358">12</text></g>
+  <g><circle class="moving" cx="268" cy="358" r="24" /><text class="value" x="268" y="358">3</text></g>
+  <text class="caption" x="54" y="416">New value starts at the end.</text>
+
+  <rect class="panel" x="340" y="112" width="280" height="330" rx="18" />
+  <text class="step" x="362" y="144">2  COMPARE</text>
+  <text class="caption" x="362" y="169">3 &lt; 8, so swap with parent.</text>
+  <g class="edge">
+    <line x1="480" y1="217" x2="420" y2="262" /><line x1="480" y1="217" x2="540" y2="262" />
+    <line x1="420" y1="294" x2="384" y2="342" /><line x1="420" y1="294" x2="456" y2="342" />
+    <line x1="540" y1="294" x2="512" y2="342" /><line x1="540" y1="294" x2="576" y2="342" />
+  </g>
+  <g><circle class="node" cx="480" cy="207" r="24" /><text class="value" x="480" y="207">2</text></g>
+  <g><circle class="node" cx="420" cy="278" r="24" /><text class="value" x="420" y="278">5</text></g>
+  <g><circle class="node" cx="540" cy="278" r="24" /><text class="value" x="540" y="278">8</text></g>
+  <g><circle class="node" cx="384" cy="358" r="24" /><text class="value" x="384" y="358">10</text></g>
+  <g><circle class="node" cx="456" cy="358" r="24" /><text class="value" x="456" y="358">7</text></g>
+  <g><circle class="node" cx="512" cy="358" r="24" /><text class="value" x="512" y="358">12</text></g>
+  <g><circle class="moving" cx="576" cy="358" r="24" /><text class="value" x="576" y="358">3</text></g>
+  <path d="M 590 328 Q 616 278 570 253" fill="none" stroke="#fb923c" stroke-width="4" stroke-linecap="round" />
+  <path d="M 570 253 L 581 255 L 575 265 Z" fill="#fb923c" />
+  <text class="caption" x="362" y="416">Move toward the root.</text>
+
+  <rect class="panel" x="648" y="112" width="280" height="330" rx="18" />
+  <text class="step" x="670" y="144">3  RESTORED</text>
+   <text class="caption" x="670" y="169">3 &gt; 2, so percolation stops.</text>
+  <g class="edge">
+    <line x1="788" y1="217" x2="728" y2="262" /><line x1="788" y1="217" x2="848" y2="262" />
+    <line x1="728" y1="294" x2="692" y2="342" /><line x1="728" y1="294" x2="764" y2="342" />
+    <line x1="848" y1="294" x2="820" y2="342" /><line x1="848" y1="294" x2="884" y2="342" />
+  </g>
+  <g><circle class="node" cx="788" cy="207" r="24" /><text class="value" x="788" y="207">2</text></g>
+  <g><circle class="node" cx="728" cy="278" r="24" /><text class="value" x="728" y="278">5</text></g>
+  <g><circle class="moving" cx="848" cy="278" r="24" /><text class="value" x="848" y="278">3</text></g>
+  <g><circle class="node" cx="692" cy="358" r="24" /><text class="value" x="692" y="358">10</text></g>
+  <g><circle class="node" cx="764" cy="358" r="24" /><text class="value" x="764" y="358">7</text></g>
+  <g><circle class="node" cx="820" cy="358" r="24" /><text class="value" x="820" y="358">12</text></g>
+  <g><circle class="node" cx="884" cy="358" r="24" /><text class="value" x="884" y="358">8</text></g>
+  <text class="caption" x="670" y="416">Every parent is smaller again.</text>
+</svg>

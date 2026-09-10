@@ -114,6 +114,65 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {children}
               </blockquote>
             ),
+            img: ({ src, alt }) => {
+              if (typeof src !== 'string') {
+                return null;
+              }
+
+              return (
+                <a
+                  href={src}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='my-8 block overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-950 shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary'
+                  title='Open diagram at full size'
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt={alt ?? ''}
+                    loading='lazy'
+                    className='h-auto w-full transition-transform duration-300 hover:scale-[1.01] motion-reduce:transform-none motion-reduce:transition-none'
+                  />
+                </a>
+              );
+            },
+            em: ({ children }) => (
+              <em className='text-sm leading-6 text-gray-600 dark:text-gray-300'>
+                {children}
+              </em>
+            ),
+            pre: ({ children }) => (
+              <pre className='my-8 overflow-x-auto rounded-xl border border-zinc-700 bg-zinc-950 p-5 text-zinc-100 shadow-lg'>
+                {children}
+              </pre>
+            ),
+            code: ({ className, children }) => {
+              const language = /language-([\w-]+)/.exec(className ?? '')?.[1];
+              const isBlock =
+                Boolean(language) || String(children).includes('\n');
+
+              if (!isBlock) {
+                return (
+                  <code className='rounded bg-gray-200 px-1.5 py-0.5 font-mono text-[0.9em] font-medium text-gray-900 dark:bg-zinc-700 dark:text-gray-100'>
+                    {children}
+                  </code>
+                );
+              }
+
+              return (
+                <code
+                  className={`${className ?? ''} relative block min-w-max font-mono text-sm leading-7 ${
+                    language
+                      ? 'pt-7 before:absolute before:top-0 before:left-0 before:text-[0.65rem] before:font-semibold before:tracking-[0.18em] before:text-blue-300 before:uppercase before:content-[attr(data-language)]'
+                      : ''
+                  }`}
+                  data-language={language}
+                >
+                  {children}
+                </code>
+              );
+            },
             a: ({ href, children }) => (
               <a
                 href={href}

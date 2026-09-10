@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" role="img" aria-labelledby="title description">
+  <title id="title">Repeated insertion compared with bottom-up heap construction</title>
+  <desc id="description">The left panel starts with an empty heap and inserts values one at a time, percolating each new leaf upward for O n log n worst-case time. The right panel starts with the complete unsorted array and sifts non-leaf nodes downward from the last parent to the root for O n time.</desc>
+  <style>
+    .panel { fill: #111c30; stroke: #334155; stroke-width: 2; }
+    .label { fill: #94a3b8; font: 700 13px Arial, sans-serif; letter-spacing: 1.4px; }
+    .copy { fill: #cbd5e1; font: 16px Arial, sans-serif; }
+    .array { fill: #f8fafc; font: 700 20px Consolas, monospace; text-anchor: middle; }
+    .arrow { fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+
+  <rect width="960" height="680" rx="28" fill="#0f172a" />
+  <text x="48" y="54" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Two ways to build a min-heap</text>
+  <text x="48" y="82" fill="#94a3b8" font-family="Arial, sans-serif" font-size="16">The starting state determines where percolation work happens.</text>
+
+  <rect class="panel" x="40" y="112" width="420" height="414" rx="20" />
+  <circle cx="72" cy="150" r="13" fill="#c2410c" />
+  <text x="96" y="158" fill="#f8fafc" font-family="Arial, sans-serif" font-size="23" font-weight="700">Repeated insertion</text>
+  <text class="copy" x="64" y="193">Start with an empty heap.</text>
+
+  <text class="label" x="64" y="232">INPUT</text>
+  <rect x="64" y="248" width="372" height="48" rx="10" fill="#1e293b" stroke="#475569" stroke-width="2" />
+  <text class="array" x="250" y="279">[9, 4, 7, 1, 3, 6, 2]</text>
+
+  <path class="arrow" d="M 250 311 L 250 354 M 239 343 L 250 354 L 261 343" stroke="#fb923c" />
+  <text x="270" y="338" fill="#fdba74" font-family="Arial, sans-serif" font-size="15">insert left to right</text>
+
+  <text class="label" x="64" y="386">HEAP GROWS</text>
+  <text x="64" y="420" fill="#cbd5e1" font-family="Consolas, monospace" font-size="17">[] → [9] → [4, 9] → …</text>
+  <text x="64" y="451" fill="#fdba74" font-family="Arial, sans-serif" font-size="15">Each new leaf may percolate up.</text>
+  <rect x="64" y="470" width="372" height="38" rx="10" fill="#431407" stroke="#c2410c" stroke-width="2" />
+  <text x="250" y="495" fill="#fed7aa" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">n inserts × up to log n levels = O(n log n)</text>
+
+  <rect class="panel" x="500" y="112" width="420" height="414" rx="20" />
+  <circle cx="532" cy="150" r="13" fill="#047857" />
+  <text x="556" y="158" fill="#f8fafc" font-family="Arial, sans-serif" font-size="23" font-weight="700">Bottom-up construction</text>
+  <text class="copy" x="524" y="193">Start with the complete unsorted array.</text>
+
+  <text class="label" x="524" y="232">COMPLETE SHAPE</text>
+  <rect x="524" y="248" width="372" height="48" rx="10" fill="#1e293b" stroke="#475569" stroke-width="2" />
+  <text class="array" x="710" y="279">[9, 4, 7, 1, 3, 6, 2]</text>
+
+  <path class="arrow" d="M 710 311 L 710 354 M 699 343 L 710 354 L 721 343" stroke="#34d399" />
+  <text x="730" y="338" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="15">sift parents down</text>
+
+  <text class="label" x="524" y="386">WORK BACKWARD</text>
+  <text x="524" y="420" fill="#cbd5e1" font-family="Consolas, monospace" font-size="17">last parent → … → root</text>
+  <text x="524" y="451" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="15">Leaves already require no work.</text>
+  <rect x="524" y="470" width="372" height="38" rx="10" fill="#022c22" stroke="#047857" stroke-width="2" />
+  <text x="710" y="495" fill="#a7f3d0" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Sift each non-leaf once = O(n)</text>
+
+  <rect x="40" y="550" width="880" height="94" rx="18" fill="#172554" stroke="#3b82f6" stroke-width="2" />
+  <text x="64" y="580" fill="#bfdbfe" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.4">WHY BOTTOM-UP IS LINEAR</text>
+  <text x="64" y="613" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="700">n/2 leaves × 0 levels  +  n/4 parents × 1 level  +  n/8 × 2 levels  +  …</text>
+  <text x="64" y="635" fill="#93c5fd" font-family="Arial, sans-serif" font-size="15">Most nodes are near the bottom and can move only a short distance.</text>
+</svg>
