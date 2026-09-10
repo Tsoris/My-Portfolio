@@ -218,12 +218,12 @@ searches or a fully sorted traversal.
 
 ## What Clicked for Me
 
-The most useful mental model for me is that the array preserves the heap’s
-**shape**, while percolation preserves its **ordering**. Appending or removing
-the final array element keeps the complete tree compact. Percolating one value
-up or down then repairs the only path whose ordering may have changed.
+The array preserves the heap’s **shape**, while percolation preserves its
+**ordering**. Appending or removing the final array element keeps the tree
+complete, with its nodes filling each level from left to right. It also
+localizes any possible ordering violation to a single path. Percolation then
+repairs that path without reorganizing the entire heap.
 
-That separation makes the implementation feel much less mysterious. A min-heap
-does not need to sort every element or search the entire tree after each
-operation. It only needs to maintain enough structure to keep the next
+A min-heap does not need to sort every element or search the entire tree after
+each operation. It only needs to maintain enough structure to keep the next
 highest-priority element at the root.
