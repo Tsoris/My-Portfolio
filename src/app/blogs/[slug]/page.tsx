@@ -1,4 +1,5 @@
 import BlogImage from '@/app/components/blogs/BlogImage';
+import { getBlogTheme } from '@/lib/blogThemes';
 import { formatBlogDate } from '@/lib/formatBlogDate';
 import { getAllBlogs, getBlogBySlug } from '@/lib/blogs';
 import type { Metadata } from 'next';
@@ -45,11 +46,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const theme = getBlogTheme(blog.series?.name);
+
   return (
     <article className='container max-w-3xl py-12 sm:py-16'>
       <Link
         href='/blogs'
-        className='inline-flex items-center gap-2 font-medium text-secondary transition-colors hover:text-primary'
+        className={`${theme.action} inline-flex items-center gap-2 font-medium transition-opacity hover:opacity-75`}
       >
         <FaArrowLeft aria-hidden className='h-3.5 w-3.5' />
         All posts
@@ -57,7 +60,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <header className='mt-10 border-b border-gray-200 pb-8 dark:border-gray-700'>
         {blog.series && (
-          <div className='mb-5 flex items-center gap-2 rounded-xl border border-primary/20 bg-primary/10 px-4 py-3 text-sm font-medium text-primary'>
+          <div
+            className={`${theme.seriesBanner} mb-5 flex items-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium`}
+          >
             <FaBookOpen aria-hidden className='shrink-0' />
             <span>{blog.series.name}</span>
             <span className='ml-auto shrink-0'>
@@ -70,7 +75,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {blog.tags.map((tag) => (
             <span
               key={tag}
-              className='rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary'
+              className={`${theme.tag} rounded-full px-3 py-1 text-xs font-medium`}
             >
               {tag}
             </span>
@@ -103,13 +108,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <h2 className='mb-5 mt-14 flex scroll-mt-24 items-center gap-3 text-3xl font-bold tracking-tight text-gray-950 dark:text-white'>
                 <span
                   aria-hidden='true'
-                  className='h-8 w-1.5 shrink-0 rounded-full bg-primary'
+                  className={`${theme.headingMarker} h-8 w-1.5 shrink-0 rounded-full`}
                 />
                 <span>{children}</span>
               </h2>
             ),
             h3: ({ children }) => (
-              <h3 className='mb-4 mt-10 scroll-mt-24 border-b border-primary/25 pb-2 text-2xl font-semibold text-primary dark:border-primary/40'>
+              <h3
+                className={`${theme.subheading} mb-4 mt-10 scroll-mt-24 border-b pb-2 text-2xl font-semibold`}
+              >
                 {children}
               </h3>
             ),
@@ -132,7 +139,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <li className='pl-2 leading-8'>{children}</li>
             ),
             blockquote: ({ children }) => (
-              <blockquote className='my-8 border-l-4 border-primary bg-primary/5 px-5 py-4 [&>p]:mb-0'>
+              <blockquote
+                className={`${theme.blockquote} my-8 border-l-4 px-5 py-4 [&>p]:mb-0`}
+              >
                 {children}
               </blockquote>
             ),
@@ -170,7 +179,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <code
                   className={`${className ?? ''} relative block min-w-max font-mono text-sm leading-7 ${
                     language
-                      ? 'pt-7 before:absolute before:top-0 before:left-0 before:text-[0.65rem] before:font-semibold before:tracking-[0.18em] before:text-blue-300 before:uppercase before:content-[attr(data-language)]'
+                      ? `${theme.codeLabel} pt-7 before:absolute before:top-0 before:left-0 before:text-[0.65rem] before:font-semibold before:tracking-[0.18em] before:uppercase before:content-[attr(data-language)]`
                       : ''
                   }`}
                   data-language={language}
@@ -182,7 +191,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             a: ({ href, children }) => (
               <a
                 href={href}
-                className='font-medium text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary'
+                className={`${theme.link} font-medium underline underline-offset-4`}
               >
                 {children}
               </a>
