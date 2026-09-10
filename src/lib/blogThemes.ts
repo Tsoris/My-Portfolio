@@ -25,6 +25,21 @@ const defaultTheme: BlogTheme = {
 };
 
 const seriesThemes: Record<string, BlogTheme> = {
+  LeetCode: {
+    card: 'border-amber-200 bg-gradient-to-br from-white via-white to-amber-50/80 shadow-amber-950/10 dark:border-amber-900/70 dark:from-zinc-900 dark:via-zinc-900 dark:to-amber-950/40',
+    seriesBanner:
+      'border-amber-500 bg-amber-400 text-zinc-950 dark:border-amber-800 dark:bg-amber-500/15 dark:text-amber-200',
+    tag: 'bg-amber-100 text-amber-800 dark:bg-amber-400/10 dark:text-amber-200',
+    titleHover: 'group-hover:text-amber-700 dark:group-hover:text-amber-300',
+    action: 'text-amber-700 dark:text-amber-300',
+    headingMarker: 'bg-amber-500 dark:bg-amber-400',
+    subheading:
+      'border-amber-300 text-amber-800 dark:border-amber-700 dark:text-amber-300',
+    link: 'text-amber-800 decoration-amber-500/50 hover:decoration-amber-800 dark:text-amber-300 dark:hover:decoration-amber-300',
+    blockquote:
+      'border-amber-500 bg-amber-50 dark:border-amber-400 dark:bg-amber-950/30',
+    codeLabel: 'before:text-amber-300',
+  },
   'Revisiting Data Structures': {
     card: 'border-violet-200 bg-gradient-to-br from-white via-white to-violet-50/80 shadow-violet-950/10 dark:border-violet-900/70 dark:from-zinc-900 dark:via-zinc-900 dark:to-violet-950/40',
     seriesBanner:
