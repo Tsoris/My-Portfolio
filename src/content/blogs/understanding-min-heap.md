@@ -4,7 +4,7 @@ date: '2026-09-09'
 excerpt:
   'How min-heaps use complete binary trees, array indexing, and percolation to
   implement efficient priority queues.'
-readTime: '6 min read'
+readTime: '8 min read'
 series:
   name: 'Revisiting Data Structures'
   order: 2
@@ -102,7 +102,7 @@ the parent’s former position. This process is called **percolating up**.
 ![Three stages of inserting 3 into a min-heap and percolating it above its parent 8.](/blogs/min-heap/insert-percolate-up.svg)
 
 _The inserted value starts in the next open position and moves upward until its
-parent has a smaller key._
+parent has a smaller or equal key._
 
 ```pseudocode
 add value to the end of the heap
@@ -121,6 +121,8 @@ preserved.
 the root directly would leave a gap at the top of the tree, so the final array
 element moves into the root position. Removing the final element preserves the
 complete-tree shape, but its value may now be larger than one or both children.
+If the heap contains only one element, removing it leaves the heap empty, so no
+percolation is necessary.
 
 The replacement value is compared with its children and swapped with the smaller
 child when necessary. Repeating this process moves the value downward until the
@@ -148,7 +150,7 @@ toward the root, positioning higher-priority elements closer to removal.
 
 ### Accessing the Minimum
 
-After each insertion or removal restores the min-heap property, first() is
+After each insertion or removal restores the min-heap property, `first()` is
 simple. In an array implementation, the minimum is stored at index `0`, so
 returning it takes constant time. A complete implementation should still define
 what happens when the heap is empty, such as raising an exception or returning a
@@ -213,10 +215,8 @@ item rather than a completely sorted collection. Common examples include:
 - Selecting the next scheduled task or event.
 - Choosing the next vertex in shortest-path algorithms such as Dijkstra’s.
 - Merging sorted streams.
-- Tracking the smallest or largest `k` elements in a data set.
-  - A min-heap can track the largest k elements seen so far by keeping the
-    smallest of those elements at the root. Tracking the smallest k elements is
-    typically done with a max-heap.
+- Tracking the largest `k` elements by keeping the smallest retained element at
+  the root. Tracking the smallest `k` elements typically uses a max-heap.
 
 Heaps can contain duplicate keys, but a basic heap is not stable: two elements
 with equal priorities are not guaranteed to leave in insertion order. Stability

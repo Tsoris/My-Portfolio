@@ -1,3 +1,4 @@
+import BlogImage from '@/app/components/blogs/BlogImage';
 import { formatBlogDate } from '@/lib/formatBlogDate';
 import { getAllBlogs, getBlogBySlug } from '@/lib/blogs';
 import type { Metadata } from 'next';
@@ -99,12 +100,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <ReactMarkdown
           components={{
             h2: ({ children }) => (
-              <h2 className='mb-4 mt-10 text-2xl font-bold tracking-tight'>
-                {children}
+              <h2 className='mb-5 mt-14 flex scroll-mt-24 items-center gap-3 text-3xl font-bold tracking-tight text-gray-950 dark:text-white'>
+                <span
+                  aria-hidden='true'
+                  className='h-8 w-1.5 shrink-0 rounded-full bg-primary'
+                />
+                <span>{children}</span>
               </h2>
             ),
             h3: ({ children }) => (
-              <h3 className='mb-3 mt-8 text-xl font-semibold'>{children}</h3>
+              <h3 className='mb-4 mt-10 scroll-mt-24 border-b border-primary/25 pb-2 text-2xl font-semibold text-primary dark:border-primary/40'>
+                {children}
+              </h3>
             ),
             p: ({ children }) => (
               <p className='mb-6 text-base leading-8 text-gray-700 dark:text-gray-200'>
@@ -134,23 +141,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 return null;
               }
 
-              return (
-                <a
-                  href={src}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='my-8 block overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-950 shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary'
-                  title='Open diagram at full size'
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={src}
-                    alt={alt ?? ''}
-                    loading='lazy'
-                    className='h-auto w-full transition-transform duration-300 hover:scale-[1.01] motion-reduce:transform-none motion-reduce:transition-none'
-                  />
-                </a>
-              );
+              return <BlogImage src={src} alt={alt ?? ''} />;
             },
             em: ({ children }) => (
               <em className='text-sm leading-6 text-gray-600 dark:text-gray-300'>
