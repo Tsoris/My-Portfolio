@@ -15,6 +15,8 @@ tags:
   - CS Fundamentals
 ---
 
+## Why I Am Revisiting Data Structures
+
 Data Structures was a course that I was very wary about. I was most intimidated
 by how broad and complicated the subject could possibly be. I realized the
 course was manageable when I put in the time and carefully reviewed the
@@ -33,11 +35,15 @@ learning the mechanics of a data structure. A previous manager of mine said, “
 software there is no magic.” I hope to internalize that, and allow that to
 encourage me to dive deep.
 
+## The Data Structures I Want to Explore
+
 The topics that I am most interested in revisiting are AVL trees, for
 complexity, and MinHeaps, for unfamiliarity. Some other topics I am especially
 excited to revisit would be binary search trees, stacks, and queues. I hope to
 be able to deepen my understanding, and make interesting connections between
 data structures.
+
+## How This Relates to LeetCode
 
 It might seem natural to connect this work to DSA interview preparation.
 However, I am not yet convinced that understanding how data structures are
@@ -52,6 +58,8 @@ revisit this observation and see whether my perspective changes.
 > different traversals with binary search trees and using those to directly
 > solve some LeetCode problems.
 
+## Thinking Like an Engineer
+
 Where I do think learning the inner workings is important is to start thinking
 more like an engineer. When we understand the inner workings we can understand
 the tradeoffs. As an engineer, we should aim for the most efficient solution
@@ -59,6 +67,8 @@ that is reasonably available. To be able to determine efficiency, we must
 understand our tools. There should be a baseline of knowledge for engineers;
 Engineers do not need to be data-structure experts, but we should understand our
 tools well enough to make informed decisions.
+
+## What to Expect From This Series
 
 I hope to be able to use this as a resource for myself, and for it to possibly
 be useful for others. I feel that I may make observations or explain things in
