@@ -66,7 +66,7 @@ For a node stored at index `i`:
 
 - Left child: `2i + 1`
 - Right child: `2i + 2`
-- Parent: `floor((i - 1) / 2)`
+- Parent, when `i > 0`: `floor((i - 1) / 2)`
 
 Arrays also provide constant-time access by index and generally good cache
 locality because elements occupy a contiguous region of memory. A node-based
@@ -111,8 +111,9 @@ while value has a parent and value < parent:
     swap value with parent
 ```
 
-The loop stops when the value reaches the root or its parent is already smaller.
-At that point, both the complete-tree and min-heap properties are preserved.
+The loop stops when the value reaches the root or is greater than or equal to
+its parent. At that point, both the complete-tree and min-heap properties are
+preserved.
 
 ### Removing the Minimum
 
@@ -142,15 +143,16 @@ return the saved root value
 
 Choosing the smaller child is important. Swapping with the larger child could
 leave a smaller sibling below the parent and immediately violate the min-heap
-property again. As the value is percolating down, we can view priority values as
-percolating upwards towards the root.
+property. As the replacement value percolates downward, smaller keys move upward
+toward the root, positioning higher-priority elements closer to removal.
 
 ### Accessing the Minimum
 
-After insertion and removal preserve the invariant, `first()` is simple. In an
-array implementation, the minimum is stored at index `0`, so returning it takes
-constant time. A complete implementation should still define what happens when
-the heap is empty, such as raising an exception or returning a sentinel value.
+After each insertion or removal restores the min-heap property, first() is
+simple. In an array implementation, the minimum is stored at index `0`, so
+returning it takes constant time. A complete implementation should still define
+what happens when the heap is empty, such as raising an exception or returning a
+sentinel value.
 
 ## Time Complexity
 
@@ -170,23 +172,30 @@ insertions.
 
 ### Building a Heap: Repeated Insertion vs. Bottom-Up Construction
 
-Separately, suppose we begin with an arbitrary array of `n` values that has not
-yet been organized into a valid heap. We can arrange those values using
-bottom-up heap construction in **`O(n)`** time.
+Suppose we begin with an arbitrary array of `n` values that has not yet been
+organized into a valid heap. We can arrange those values using bottom-up heap
+construction in **`O(n)`** time.
 
-Bottom-up heap construction begins at the lowest level containing parent nodes
-and works upward toward the root. Near the bottom, there are many parents to
-process, but each value can sift down only a short distance. As we move upward,
-there are fewer parents, although each one may need to travel through more
-levels. The number of parents decreases faster than the possible sifting
-distance increases, so the combined work remains proportional to `n`, giving
-bottom-up heap construction an `O(n)` runtime.
+Every leaf is already a valid one-node heap because it has no children with
+which it could violate the heap property. Bottom-up construction therefore skips
+the leaves, starts with the last parent, and works backward toward the root.
+Applying sift-down to a parent makes the subtree rooted at that position a valid
+min-heap. Because its child subheaps are already valid, we can continue upward
+and build progressively larger valid subheaps until the entire array forms a
+valid heap.
+
+This bottom-up order also explains the `O(n)` runtime. Near the bottom, there
+are many parents to process, but their values can sift down only a short
+distance. As we move upward, there are fewer parents, although their values may
+need to travel through more levels. The number of parents decreases faster than
+the possible sifting distance increases, so the combined work remains
+proportional to `n`.
 
 In this case, `O(n)` does not mean that the algorithm performs exactly `n`
 operations. It means that the total work increases at a rate proportional to
 `n`, even if the actual number of operations is some constant multiple of `n`.
 
-This is faster than starting with an empty heap and inserting all n values
+This is faster than starting with an empty heap and inserting all `n` values
 individually, since each insertion may require `O(log n)` time to percolate
 upward, resulting in `O(n log n)` total time.
 
@@ -205,6 +214,9 @@ item rather than a completely sorted collection. Common examples include:
 - Choosing the next vertex in shortest-path algorithms such as Dijkstra’s.
 - Merging sorted streams.
 - Tracking the smallest or largest `k` elements in a data set.
+  - A min-heap can track the largest k elements seen so far by keeping the
+    smallest of those elements at the root. Tracking the smallest k elements is
+    typically done with a max-heap.
 
 Heaps can contain duplicate keys, but a basic heap is not stable: two elements
 with equal priorities are not guaranteed to leave in insertion order. Stability
