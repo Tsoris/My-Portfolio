@@ -39,7 +39,7 @@ const ProjectActions = ({ project }: ProjectActionsProps) => {
             ) : (
               <FaArrowRight className='h-4 w-4' />
             )}
-            <span>{project.demoLabel ?? 'Live Demo'}</span>
+            <span>{project.demoLabel ?? 'View Demo'}</span>
           </Link>
         ) : project.demoComingSoonLink ? (
           <ComingSoonDemoAction milestoneLink={project.demoComingSoonLink} />

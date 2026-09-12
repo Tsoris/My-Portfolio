@@ -28,7 +28,7 @@ export const projects: Project[] = [
     ],
     sourcePrivate: true,
     demoLink: '/projects/animal-game',
-    demoLabel: 'Play Demo',
+    demoLabel: 'View Demo',
   },
   {
     id: 'temperature-data-parser',
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     technologies: ['x86 Assembly', 'MASM', 'Irvine32', 'File I/O'],
     sourcePrivate: true,
     demoLink: '/projects/temperature-data-parser',
-    demoLabel: 'Explore Project',
+    demoLabel: 'View Demo',
   },
   {
     id: 'hash-map-collision-strategies',
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     ],
     sourcePrivate: true,
     demoLink: '/projects/hash-map-collision-strategies',
-    demoLabel: 'Explore Demo',
+    demoLabel: 'View Demo',
   },
   {
     id: 'mern-exercise-tracker',
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'Mongoose'],
     githubLink: 'https://github.com/Tsoris/MERNExerciseTracker',
     demoLink: 'https://mern-exercise-tracker-j6jb.onrender.com/',
-    demoLabel: 'Live Demo',
+    demoLabel: 'View Demo',
     demoNote: 'Free demo hosting may take up to a minute to wake.',
   },
   {

@@ -8,7 +8,7 @@ interface ComingSoonDemoActionProps {
 const ComingSoonDemoAction = ({ milestoneLink }: ComingSoonDemoActionProps) => (
   <ProjectActionPopover
     icon={<FaArrowRight className='h-4 w-4' aria-hidden />}
-    label='Demo'
+    label='View Demo'
     dialogLabel='Drop In Chess demo status'
     message={
       <p>
