@@ -41,12 +41,13 @@ const skillGroups = [
     title: 'Cloud & Developer Tools',
     icon: FaCloud,
     skills: [
+      'CI/CD',
+      'Docker',
+      'Linux / SSH',
+      'Git / GitHub',
       'AWS Lambda / SQS / S3',
       'AWS CloudWatch / Alarms',
-      'Linux / SSH',
-      'Docker',
-      'Git / GitHub',
-      'CI/CD',
+      'OpenAI Codex/ChatGPT',
     ],
   },
   {
