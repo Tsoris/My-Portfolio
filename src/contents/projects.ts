@@ -10,8 +10,9 @@ export const projects: Project[] = [
       'Jump into curated chess positions and play them out, backed by server-side move validation and game state management.',
     technologies: ['Java', 'Spring Boot', 'React', 'TypeScript', 'REST APIs'],
     githubLink: 'https://github.com/Tsoris/drop-in-chess/blob/main/README.md',
-    demoComingSoonLink:
-      'https://github.com/Tsoris/drop-in-chess/blob/main/docs/Drop-in-Chess-Design-Document-V1.md#15-development-milestones',
+    demoLink: 'https://drop-in-chess.vercel.app/',
+    demoLabel: 'View Demo',
+    demoNote: 'Free demo hosting may take up to a minute to wake.',
   },
   {
     id: 'animal-game',

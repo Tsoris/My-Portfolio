@@ -98,9 +98,10 @@ const HashMapCollisionStrategiesPage = () => (
         </p>
         <p className='mt-4 rounded-lg bg-cyan-50 p-4 text-sm leading-6 text-cyan-950 dark:bg-cyan-950/40 dark:text-cyan-100'>
           <strong>Why tombstones matter:</strong> A tombstone marks a removed
-          slot as previously occupied, preserving the probe sequence. A lookup
-          can continue past that slot to find a key displaced by an earlier
-          collision and stops only when it reaches a truly empty bucket.
+          slot as previously occupied rather than completely removing an entry,
+          this preserves the probe sequence. A lookup can continue past that
+          slot to find a key displaced by an earlier collision and stops only
+          when it reaches a truly empty bucket.
         </p>
       </article>
       <article className='rounded-xl border border-gray-200 bg-white p-7 shadow-sm dark:border-gray-700 dark:bg-dark/50'>
