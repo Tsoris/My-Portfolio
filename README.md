@@ -148,3 +148,12 @@ has been applied, and deploy the `main` branch.
 
 Do not expose database credentials or the Resend API key through variables
 prefixed with `NEXT_PUBLIC_`.
+
+### Draft blog posts
+
+Add `draft: true` to a post's YAML frontmatter to hide it from the home page,
+blog listing, generated article routes, and series totals. Direct requests for a
+draft article return not found. This also applies during local development. Set
+`draft: false` or remove the field when the post is ready. Use an unquoted YAML
+boolean. Existing posts without the field remain visible. Rebuild and redeploy
+the site for visibility changes to take effect on the deployed site.

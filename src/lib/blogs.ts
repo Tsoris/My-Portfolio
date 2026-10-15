@@ -48,10 +48,18 @@ const getSeries = (data: Record<string, unknown>, fileName: string) => {
   };
 };
 
-const readBlogFile = (fileName: string): BlogPost => {
+const readBlogFile = (fileName: string): BlogPost | undefined => {
   const slug = fileName.replace(/\.md$/, '');
   const filePath = path.join(blogDirectory, fileName);
   const { data, content } = matter(fs.readFileSync(filePath, 'utf8'));
+
+  if (data.draft !== undefined && typeof data.draft !== 'boolean') {
+    throw new Error(`Invalid draft flag in blog frontmatter: ${fileName}`);
+  }
+
+  if (data.draft === true) {
+    return undefined;
+  }
   const tags = Array.isArray(data.tags)
     ? data.tags.filter((tag): tag is string => typeof tag === 'string')
     : [];
@@ -70,7 +78,9 @@ const readBlogFile = (fileName: string): BlogPost => {
 };
 
 const getBlogPosts = (): BlogPost[] => {
-  const posts = getMarkdownFiles().map(readBlogFile);
+  const posts = getMarkdownFiles()
+    .map(readBlogFile)
+    .filter((post): post is BlogPost => post !== undefined);
   const seriesTotals = new Map<string, number>();
 
   posts.forEach(({ series }) => {
