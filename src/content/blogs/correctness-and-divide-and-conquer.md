@@ -1,5 +1,5 @@
 ---
-title: 'Analysis of Algorithms: Correctness and Divide & Conquer'
+title: 'Analysis of Algorithms: Correctness of an Algorithm'
 date: '2026-10-15'
 draft: true
 excerpt:
@@ -20,5 +20,7 @@ tags:
 In my first post, I looked back at running time, asymptotic notation, and
 recursion. This week, we’re moving into correctness of algorithms and the divide
 and conquer technique. I’ll explore how we show that an algorithm produces the
-right result and how breaking a problem into smaller subproblems can help us
-solve it.
+right result in this reading. In the next one I will dive into how breaking a
+problem into smaller subproblems can help us solve it.
+
+## What Does it Mean for an Algorithm to Be Correct?

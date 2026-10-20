@@ -1,3 +1,4 @@
+import { getHeadingId } from '@/lib/headingId';
 import BlogImage from '@/app/components/blogs/BlogImage';
 import { getBlogTheme } from '@/lib/blogThemes';
 import { formatBlogDate } from '@/lib/formatBlogDate';
@@ -104,8 +105,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div className='mt-10'>
         <ReactMarkdown
           components={{
-            h2: ({ children }) => (
-              <h2 className='mb-5 mt-14 flex scroll-mt-24 items-center gap-3 text-3xl font-bold tracking-tight text-gray-950 dark:text-white'>
+            h2: ({ children, node }) => (
+              <h2
+                id={getHeadingId(node)}
+                className='mb-5 mt-14 flex scroll-mt-24 items-center gap-3 text-3xl font-bold tracking-tight text-gray-950 dark:text-white'
+              >
                 <span
                   aria-hidden='true'
                   className={`${theme.headingMarker} h-8 w-1.5 shrink-0 rounded-full`}
@@ -113,8 +117,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <span>{children}</span>
               </h2>
             ),
-            h3: ({ children }) => (
+            h3: ({ children, node }) => (
               <h3
+                id={getHeadingId(node)}
                 className={`${theme.subheading} mb-4 mt-10 scroll-mt-24 border-b pb-2 text-2xl font-semibold`}
               >
                 {children}

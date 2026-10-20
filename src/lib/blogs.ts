@@ -81,12 +81,24 @@ const getBlogPosts = (): BlogPost[] => {
   const posts = getMarkdownFiles()
     .map(readBlogFile)
     .filter((post): post is BlogPost => post !== undefined);
-  const seriesTotals = new Map<string, number>();
+  const seriesPosts = new Map<string, BlogPost[]>();
 
-  posts.forEach(({ series }) => {
-    if (series) {
-      seriesTotals.set(series.name, (seriesTotals.get(series.name) ?? 0) + 1);
+  posts.forEach((post) => {
+    if (post.series) {
+      const members = seriesPosts.get(post.series.name) ?? [];
+      members.push(post);
+      seriesPosts.set(post.series.name, members);
     }
+  });
+
+  const positions = new Map<string, number>();
+  seriesPosts.forEach((members) => {
+    // Frontmatter order determines sequence; only visible posts get numbers.
+    members.sort(
+      (a, b) =>
+        a.series!.position - b.series!.position || a.slug.localeCompare(b.slug),
+    );
+    members.forEach((post, index) => positions.set(post.slug, index + 1));
   });
 
   return posts.map((post) => ({
@@ -94,7 +106,8 @@ const getBlogPosts = (): BlogPost[] => {
     series: post.series
       ? {
           ...post.series,
-          total: seriesTotals.get(post.series.name) ?? 1,
+          position: positions.get(post.slug)!,
+          total: seriesPosts.get(post.series.name)!.length,
         }
       : undefined,
   }));
